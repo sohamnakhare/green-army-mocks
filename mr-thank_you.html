@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+    </head>
+<body>
+    <div class="jumbotron" style="height:100vh">
+        <div class="text-center">
+            <h1>साइन अप केल्याबद्दल धन्यवाद</h1>
+            <hr/>
+            <div style="color:green; font-size: 60px">
+                <span class="glyphicon glyphicon-ok"></span>
+            </div>
+            <h2>
+                    
+ग्रीन आर्मीमध्ये आपले स्वागत आहे! आपण आमच्याबरोबर आहात अशी आम्हाला आनंद आहे.<br/>
+आपण आमच्या पोर्टलचा वापर करण्यास प्रारंभ करू शकता. कृपया <a href="/mr-green_army2.htm">लॉगिन पृष्ठावर </a>  जा
+            </h2>
+            <br/><br/>
+            <h4>आम्ही आपले स्थान अद्ययावत केले आहे</h4>
+            आपले वर्तमान स्थान आहे :
+            <div id="demo"></div>
+        </div>
+        
+    </div>
+
+    <script>
+        window.onload = function() {
+            var x = document.getElementById("demo");
+
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else { 
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }
+
+            function showPosition(position) {
+                x.innerHTML = "अक्षांश: " + position.coords.latitude + 
+                "<br>रेखांश: " + position.coords.longitude;
+            }
+
+            getLocation();
+        };
+    </script>
+</body>
+</html>

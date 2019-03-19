@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+    </head>
+<body>
+    <div class="jumbotron" style="height:100vh">
+        <div class="text-center">
+            <h1>Thank you for signing up</h1>
+            <hr/>
+            <div style="color:green; font-size: 60px">
+                <span class="glyphicon glyphicon-ok"></span>
+            </div>
+            <h2>
+                Welcome to <strong>Green Army</strong> ! We are glad you are with us.<br/>
+                You can start using our portal. Please, proceed to the <a href="/green_army2.htm">login page</a>
+            </h2>
+            <br/><br/>
+            <h4>We have updated your location</h4>
+            Your current location is:
+            <div id="demo"></div>
+        </div>
+        
+    </div>
+
+    <script>
+        window.onload = function() {
+            var x = document.getElementById("demo");
+
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else { 
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }
+
+            function showPosition(position) {
+                x.innerHTML = "Latitude: " + position.coords.latitude + 
+                "<br>Longitude: " + position.coords.longitude;
+            }
+
+            getLocation();
+        };
+    </script>
+</body>
+</html>
